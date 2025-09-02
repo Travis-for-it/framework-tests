@@ -1,0 +1,21 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+
+export const getStaticPaths = (() => {
+    return [
+        { params: { lang: undefined }},
+        { params: { lang: "ja_jp" }},
+    ];
+}) satisfies GetStaticPaths;
+const { lang } = Astro.params;
+let chosenLang = lang
+if (!lang) {
+	chosenLang = ''
+}
+---
+
+<Layout>
+	<h1>HI</h1>
+	<a href={`${chosenLang}/top/publisher`}>publisher</a>
+</Layout>

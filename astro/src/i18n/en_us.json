@@ -1,0 +1,9 @@
+{
+    "top": {
+        "hello": "hello",
+        "page": "English"
+    },
+    "another": {
+        "text": "another page"
+    }
+}

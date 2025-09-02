@@ -1,0 +1,48 @@
+---
+import { allLocales, defaultLocale } from "../utils/allLocales";
+
+const { currentLocale, currentPath } = Astro.props;
+
+function getLocaleUrl(targetLocale: string): string {
+  let path = currentPath;
+
+  for (const locale of allLocales) {
+    const prefix = `/${locale}`;
+    if (path.startsWith(prefix)) {
+      path = path.slice(prefix.length);
+      break;
+    }
+  }
+
+  path = path || '/';
+
+  if (path === '/') {
+    return targetLocale === defaultLocale
+      ? path
+      : `/${targetLocale}`;
+  }
+
+  if (path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+
+  return targetLocale === defaultLocale
+    ? path
+    : `/${targetLocale}${path}`;
+}
+
+
+---
+<div>
+    <ul>
+    {allLocales.map(locale => (
+      <li>
+        {locale === currentLocale ? (
+          <p>{locale}</p>
+        ) : (
+          <a href={getLocaleUrl(locale)}>{locale}</a>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>

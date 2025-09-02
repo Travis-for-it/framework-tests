@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { loadTranslation } from '../../../utils/loadTranslation';
+import Layout from '../../../layouts/Layout.astro';
+
+export const getStaticPaths = (() => {
+    return [
+        { params: { lang: undefined }},
+        { params: { lang: "ja_jp" }},
+    ];
+}) satisfies GetStaticPaths;
+const { lang } = Astro.params;
+const t = await loadTranslation(lang ?? 'en_us');
+---
+<Layout>
+    <div>
+        <h1>{t.top.hello}</h1>
+        <h2>{t.top.page}</h2>
+    </div>
+</Layout>
