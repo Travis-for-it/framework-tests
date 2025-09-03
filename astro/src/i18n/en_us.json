@@ -19,6 +19,12 @@
                 "name": "Influencer",
                 "perfect_for_one": "Content creators with 1000+ followers"
             }
+        },
+        "faq": {
+            "signup": {
+                "question": "How do I sign up as a publisher on Webridge?",
+                "content": "Signing up is easy and free! Just click the Sign Up button, fill out a short form with your details, and connect your website, app, or social channels. Once approved, you can start browsing and promoting campaigns right away."
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ import Header from './components/Header.vue';
 <template>
   <div>
     <Header />
-    <div class="flex flex-col items-center mx-24">
+    <div class="flex flex-col items-center">
       <NuxtPage />
     </div>
   </div>

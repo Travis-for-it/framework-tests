@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mx-24">
         <div class="text-center">
             <h1 class="text-3xl">{{ $t('publisher_top.types_of_publishers.heading') }}</h1>
             <h2>{{ $t('publisher_top.types_of_publishers.sub_heading') }}</h2>

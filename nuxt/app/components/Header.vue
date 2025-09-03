@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between">
+    <div class="flex justify-between sticky top-0 z-10 bg-white">
         <a href="/">
             <NuxtImg
                 src="/images/logo_webridge_afb.svg"

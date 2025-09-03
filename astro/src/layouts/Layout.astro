@@ -1,6 +1,6 @@
 ---
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
-const { url, params } = Astro;
+const { url } = Astro;
 const currentPath = url.pathname;
 import "../styles/global.css";
 ---
@@ -15,9 +15,11 @@ import "../styles/global.css";
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<LanguageSwitcher currentPath={currentPath} />
-		<div class="flex flex-col items-center mx-24">
-			<slot />
+		<div>
+			<LanguageSwitcher currentPath={currentPath} />
+			<div class="flex flex-col items-center">
+				<slot />
+			</div>
 		</div>
 	</body>
 </html>
