@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import DashboardHeaderMoney from '../../../assets/images/dashboard-header-money.svg'
+
+const {t} = Astro.props
+---
+<div class="h-screen">
+    <div class="whitespace-pre-line text-center">
+        <h1 class="text-4xl">{ t.publisher_top.first_view.heading }</h1>
+        <h2 class="text-2xl">{ t.publisher_top.first_view.sub_heading }</h2>
+    </div>
+    <div class="w-full">
+        <Image
+            src={DashboardHeaderMoney}
+            alt={"money"}
+            class="mx-auto"
+        />
+    </div>
+</div>

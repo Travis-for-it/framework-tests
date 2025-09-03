@@ -1,8 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import { allLocales, defaultLocale } from "../utils/allLocales";
+import WebridgeLogo from '../assets/images/logo_webridge_afb.svg'
 
-const { currentLocale, currentPath } = Astro.props;
+const { currentPath } = Astro.props;
+const { params } = Astro;
 
+const getTopPagePath = () => {
+  if (params.lang) {
+    return `/${params.lang}`
+  }
+  return '/'
+}
+
+//適当
 function getLocaleUrl(targetLocale: string): string {
   let path = currentPath;
 
@@ -33,15 +44,16 @@ function getLocaleUrl(targetLocale: string): string {
 
 
 ---
-<div>
+<div class="flex justify-between">
+  <div>
+    <a href={getTopPagePath()}>
+      <Image src={WebridgeLogo} alt={"webridge"} width={200} />
+    </a>
+  </div>
     <ul>
     {allLocales.map(locale => (
       <li>
-        {locale === currentLocale ? (
-          <p>{locale}</p>
-        ) : (
           <a href={getLocaleUrl(locale)}>{locale}</a>
-        )}
       </li>
     ))}
   </ul>

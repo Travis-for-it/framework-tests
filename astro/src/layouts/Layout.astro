@@ -1,8 +1,8 @@
 ---
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 const { url, params } = Astro;
-const currentLocale = params.locale
 const currentPath = url.pathname;
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -15,8 +15,10 @@ const currentPath = url.pathname;
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<LanguageSwitcher currentLocale={currentLocale} currentPath={currentPath} />
-		<slot />
+		<LanguageSwitcher currentPath={currentPath} />
+		<div class="flex flex-col items-center mx-24">
+			<slot />
+		</div>
 	</body>
 </html>
 

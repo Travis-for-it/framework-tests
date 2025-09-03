@@ -2,6 +2,8 @@
 import type { GetStaticPaths } from 'astro';
 import { loadTranslation } from '../../../utils/loadTranslation';
 import Layout from '../../../layouts/Layout.astro';
+import PublisherTopFirstView from '../../../components/top/publisherTop/PublisherTopFirstView.astro';
+import TypesOfPublishers from '../../../components/top/publisherTop/TypesOfPublishers.vue';
 
 export const getStaticPaths = (() => {
     return [
@@ -13,8 +15,6 @@ const { lang } = Astro.params;
 const t = await loadTranslation(lang ?? 'en_us');
 ---
 <Layout>
-    <div>
-        <h1>{t.top.hello}</h1>
-        <h2>{t.top.page}</h2>
-    </div>
+    <PublisherTopFirstView t={t} />
+    <TypesOfPublishers t={t} client:visible />
 </Layout>

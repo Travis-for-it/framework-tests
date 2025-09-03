@@ -2,10 +2,20 @@
 import { defineConfig } from 'astro/config';
 import {allLocales} from './src/utils/allLocales'
 
+import tailwindcss from '@tailwindcss/vite';
+
+import vue from '@astrojs/vue';
+
 // https://astro.build/config
 export default defineConfig({
-    i18n: { 
-        defaultLocale: 'en_us', 
-        locales: allLocales,
-    }
+  i18n: { 
+      defaultLocale: 'en_us', 
+      locales: allLocales,
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
+  },
+
+  integrations: [vue()]
 });
