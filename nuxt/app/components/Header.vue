@@ -1,15 +1,24 @@
 <template>
-    <div>
-        <a href="/">TOP</a>
+    <div class="flex justify-between">
+        <a href="/">
+            <NuxtImg
+                src="/images/logo_webridge_afb.svg"
+                loading="eager"
+                fetch-priority="high"
+                width="200"
+            />
+        </a>
         <br />
         <NuxtLink v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)">
-            {{ locale.name }}
+           to: {{ locale.name }}
         </NuxtLink>
-        <h1>{{ $t('title.text') }}</h1>
     </div>
 </template>
 
 <script setup lang="ts">
+import { NuxtImg } from '#components'
+
+
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 

@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxt/image'],
   i18n: {
     customRoutes: 'config',
     defaultLocale: 'en_us',

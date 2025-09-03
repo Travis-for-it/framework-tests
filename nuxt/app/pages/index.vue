@@ -1,9 +1,8 @@
 <template>
     <div>
-        Index page
-         <NuxtLink to="/about">about</NuxtLink>
+        <h1 class="3xl">THIS IS THE HOME PAGE</h1>
          <br />
-         <NuxtLink :to="localePath('lang-top-publisher')">publisher</NuxtLink>
+         <NuxtLink :to="localePath('lang-top-publisher')">publisher page</NuxtLink>
          <br />
     </div>
 </template>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Locale: {{ route.params.lang }}</h1>
-    <p>{{ $t('publisher.text') }}</p>
+    <PublisherFirstView />
+    <TypesOfPublishers />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from '#app'; 
+import PublisherFirstView from '~/components/top/publisherTop/PublisherFirstView.vue';
+import TypesOfPublishers from '~/components/top/publisherTop/TypesOfPublishers.vue';
 
-const route = useRoute();
 </script>
