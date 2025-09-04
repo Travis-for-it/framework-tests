@@ -2,6 +2,19 @@
 import { Image } from 'astro:assets';
 import DashboardHeaderMoney from '../../../assets/images/dashboard-header-money.svg'
 
+type PublisherFirstViewTranslations = {
+    publisher_top: {
+        first_view: {
+            heading: string;
+            sub_heading: string
+        }
+    }
+}
+
+interface Props {
+    t: PublisherFirstViewTranslations
+}
+
 const {t} = Astro.props
 ---
 <div class="h-screen mx-24">
