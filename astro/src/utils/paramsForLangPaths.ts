@@ -1,6 +1,10 @@
+import { allLocales } from "./allLocales"
+
 export const paramsForLangPaths = () => {
-    return [
-        { params: { lang: undefined }}, //en_usはURLにでない
-        { params: { lang: "ja_jp" }},
-    ];
+    return allLocales.map((locale) => {
+        if (locale === 'en_us') {
+            return { params: {lang: undefined} }
+        }
+        return { params:{lang: locale } }
+    })
 }
