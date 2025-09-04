@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import { allLocales } from "../utils/allLocales";
+import WebridgeLogo from '../assets/images/logo_webridge_afb.svg'
+import { getRelativeLocaleUrl, getAbsoluteLocaleUrl } from 'astro:i18n';
+import LanguageSwitcher from "./LanguageSwitcher.vue";
+
+const { params } = Astro;
+
+const langPath = params.lang ?? 'en_us'
+
+---
+<div class="w-full flex justify-between sticky top-0 z-10 bg-white border-b relative items-center">
+  <div>
+    <a href={getRelativeLocaleUrl(langPath, "", {normalizeLocale: false})}>
+      <Image src={WebridgeLogo} alt={"webridge"} width={200} />
+    </a>
+  </div>
+  <LanguageSwitcher allLocales={allLocales} client:load />
+</div>

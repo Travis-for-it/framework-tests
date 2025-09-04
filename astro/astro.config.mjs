@@ -11,6 +11,9 @@ export default defineConfig({
   i18n: { 
       defaultLocale: 'en_us', 
       locales: allLocales,
+      routing: {
+        prefixDefaultLocale: false,
+      }
   },
 
   vite: {

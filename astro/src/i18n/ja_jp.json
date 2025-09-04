@@ -1,6 +1,7 @@
 {
-    "title": {
-        "text": "タイトル"
+    "top": {
+        "text": "タイトル",
+        "publisher": "パブリシャーページ"
     },
     "publisher_top": {
         "first_view": {

@@ -1,6 +1,7 @@
 {
-    "title": {
-        "text": "title"
+    "top": {
+        "text": "title",
+        "publisher": "publisher page"
     },
     "publisher_top": {
         "first_view": {

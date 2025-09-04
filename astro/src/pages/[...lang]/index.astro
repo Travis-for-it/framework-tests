@@ -1,21 +1,27 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import Layout from '../../layouts/Layout.astro';
+import { paramsForLangPaths } from '../../utils/paramsForLangPaths';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { loadTranslation } from '../../utils/loadTranslation';
 
 export const getStaticPaths = (() => {
-    return [
-        { params: { lang: undefined }},
-        { params: { lang: "ja_jp" }},
-    ];
+    return paramsForLangPaths()
 }) satisfies GetStaticPaths;
 const { lang } = Astro.params;
-let chosenLang = lang
-if (!lang) {
-	chosenLang = ''
+let chosenLang = lang ?? 'en_us'
+
+type TopTranslations = {
+	top: {
+		text: string;
+		publisher: string;
+	}
 }
+
+const t: TopTranslations = await loadTranslation(lang ?? 'en_us');
 ---
 
 <Layout>
-	<h1>HI</h1>
-	<a href={`${chosenLang}/top/publisher`}>publisher</a>
+	<h1>{t.top.text}</h1>
+	<a href={getRelativeLocaleUrl(chosenLang, "top/publisher", {normalizeLocale: false})}>{t.top.publisher}</a>
 </Layout>
