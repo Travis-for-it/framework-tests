@@ -1,4 +1,8 @@
 {
+    "header": {
+        "advertiser": "Advertiser",
+        "publisher": "Publisher"
+    },
     "top": {
         "text": "title",
         "publisher": "publisher page"

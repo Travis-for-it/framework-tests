@@ -1,4 +1,8 @@
 {
+    "header": {
+        "advertiser": "アドバタイザー",
+        "publisher": "パブリシャー"
+    },
     "top": {
         "text": "タイトル",
         "publisher": "パブリシャーページ"

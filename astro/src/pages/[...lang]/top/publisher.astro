@@ -13,7 +13,7 @@ export const getStaticPaths = (() => {
 const { lang } = Astro.params;
 const t = await loadTranslation(lang ?? 'en_us');
 ---
-<Layout>
+<Layout t={t}>
     <div class="py-20">
         <PublisherTopFirstView t={t} />
         <TypesOfPublishers t={t} client:visible />

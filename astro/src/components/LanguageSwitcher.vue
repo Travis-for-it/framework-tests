@@ -41,6 +41,7 @@ import { defaultLocale } from '../utils/allLocales';
 
 interface Props {
     allLocales: string[]
+    currentLocale: string
 }
 
 const props = defineProps<Props>()
@@ -48,7 +49,7 @@ const props = defineProps<Props>()
 const supportedLocales = props.allLocales
 
 const showDropdown = ref(false)
-const currentLocale = ref(defaultLocale)
+const currentLocale = ref(props.currentLocale)
 
 const toggleDropdown = () => {
   showDropdown.value = !showDropdown.value

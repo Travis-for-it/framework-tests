@@ -5,9 +5,18 @@ import WebridgeLogo from '../assets/images/logo_webridge_afb.svg'
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import LanguageSwitcher from "./LanguageSwitcher.vue";
 
+type HeaderTranslations = {
+  header: {
+    advertiser: string;
+    publisher: string;
+  }
+}
+const {tr} = Astro.props
 const { params } = Astro;
 
 const langPath = params.lang ?? 'en_us'
+
+const t: HeaderTranslations = tr
 
 ---
 <div class="w-full flex justify-between sticky top-0 z-10 bg-white border-b items-center">
@@ -16,5 +25,7 @@ const langPath = params.lang ?? 'en_us'
       <Image src={WebridgeLogo} alt={"webridge"} width={200} />
     </a>
   </div>
-  <LanguageSwitcher allLocales={allLocales} client:load />
+  <span>{t.header.advertiser}</span>
+  <span>{t.header.publisher}</span>
+  <LanguageSwitcher allLocales={allLocales} currentLocale={langPath} client:load />
 </div>

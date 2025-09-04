@@ -21,7 +21,7 @@ type TopTranslations = {
 const t: TopTranslations = await loadTranslation(lang ?? 'en_us');
 ---
 
-<Layout>
+<Layout t={t}>
 	<h1>{t.top.text}</h1>
 	<a href={getRelativeLocaleUrl(chosenLang, "top/publisher", {normalizeLocale: false})}>{t.top.publisher}</a>
 </Layout>
