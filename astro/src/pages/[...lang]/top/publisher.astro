@@ -15,7 +15,7 @@ const { lang } = Astro.params;
 const t = await loadTranslation(lang ?? 'en_us');
 ---
 <Layout t={t}>
-    <div class="py-20 max-w-screen-xl">
+    <div class="py-20 max-w-screen">
         <PublisherTopFirstView t={t} />
         <Marquee client:visible />
         <TypesOfPublishers t={t} client:visible />
