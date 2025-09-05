@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import DashboardHeaderMoney from '../../../assets/images/dashboard-header-money.svg'
+import '@fontsource-variable/noto-serif-jp';
 
 type PublisherFirstViewTranslations = {
     publisher_top: {
@@ -16,10 +17,14 @@ interface Props {
 }
 
 const {t} = Astro.props
+
+const { params } = Astro;
+
+const langPath = params.lang ?? 'en_us'
 ---
 <div class="h-screen mx-24">
     <div class="whitespace-pre-line text-center">
-        <h1 class="text-4xl">{ t.publisher_top.first_view.heading }</h1>
+        <h1 class=`text-4xl ${langPath}-h1`>{ t.publisher_top.first_view.heading }</h1>
         <h2 class="text-2xl">{ t.publisher_top.first_view.sub_heading }</h2>
     </div>
     <div class="w-full">
@@ -27,6 +32,16 @@ const {t} = Astro.props
             src={DashboardHeaderMoney}
             alt={"money"}
             class="mx-auto"
+            loading={"eager"}
         />
     </div>
 </div>
+
+<style>
+    .en_us-h1 {
+        font-weight: bold;
+    }
+    .ja_jp-h1 {
+        font-family: 'Noto Serif JP Variable', serif;
+    }
+</style>
