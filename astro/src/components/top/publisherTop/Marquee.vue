@@ -1,5 +1,5 @@
 <template>
-  <div class="marquee-wrapper">
+  <div class="marquee-wrapper mt-40">
     <div class="marquee-track" ref="track">
       <div
         v-for="(logoSet, index) in logoSets"

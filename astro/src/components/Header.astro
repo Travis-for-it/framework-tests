@@ -29,7 +29,7 @@ const langPath = params.lang ?? 'en_us'
       <Image src={WebridgeLogo} alt={"webridge"} width={200} />
     </a>
   </div>
-  <span>{t.header.advertiser}</span>
-  <span>{t.header.publisher}</span>
+  <a href="#">{t.header.advertiser}</a>
+  <a href="#">{t.header.publisher}</a>
   <LanguageSwitcher allLocales={allLocales} currentLocale={langPath} client:load />
 </div>
