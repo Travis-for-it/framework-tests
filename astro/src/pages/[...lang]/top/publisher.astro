@@ -6,7 +6,7 @@ import PublisherTopFirstView from '../../../components/top/publisherTop/Publishe
 import TypesOfPublishers from '../../../components/top/publisherTop/TypesOfPublishers.vue';
 import FAQ from '../../../components/top/publisherTop/FAQ.astro';
 import { paramsForLangPaths } from '../../../utils/paramsForLangPaths';
-import Marquee from '../../../components/top/publisherTop/Marquee.vue';
+import Marquee from '../../../components/top/publisherTop/Marquee.astro';
 
 export const getStaticPaths = (() => {
     return paramsForLangPaths()
@@ -17,7 +17,7 @@ const t = await loadTranslation(lang ?? 'en_us');
 <Layout t={t}>
     <div class="py-20 max-w-screen">
         <PublisherTopFirstView t={t} />
-        <Marquee client:visible />
+        <Marquee />
         <TypesOfPublishers t={t} client:visible />
         <FAQ t={t} />
     </div>

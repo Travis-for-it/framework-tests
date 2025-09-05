@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+import logoIherb from '../../../assets/images/brands/logo_iherb.png';
+import logoLazada from '../../../assets/images/brands/logo_lazada.png';
+import logoPayoneer from '../../../assets/images/brands/logo_payoneer.png';
+import logoRakutenStay from '../../../assets/images/brands/logo_rakuten_stay.png';
+import logoSkylum from '../../../assets/images/brands/logo_skylum.png';
+import logoSonyMusic from '../../../assets/images/brands/logo_sony_music.png';
+import logoSorare from '../../../assets/images/brands/logo_sorare.png';
+import logoSsense from '../../../assets/images/brands/logo_ssense.png';
+import logoSwarvoski from '../../../assets/images/brands/logo_swarvoski@2x5.png';
+import logoThaiHand from '../../../assets/images/brands/logo_thai_hand.png';
+
+const logos = [
+  { src: logoIherb, alt: 'iherb' },
+  { src: logoLazada, alt: 'lazada' },
+  { src: logoPayoneer, alt: 'payoneer' },
+  { src: logoRakutenStay, alt: 'rakuten_stay' },
+  { src: logoSkylum, alt: 'skylum' },
+  { src: logoSonyMusic, alt: 'sony_music' },
+  { src: logoSorare, alt: 'sorare' },
+  { src: logoSsense, alt: 'ssense' },
+  { src: logoSwarvoski, alt: 'swarvoski' },
+  { src: logoThaiHand, alt: 'thai_hand' },
+];
+
+const scrollLogos = [...logos, ...logos]
+---
+
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    {scrollLogos.map((logo) => (
+      <div class="logo-container">
+        <Image src={logo.src} alt={logo.alt} class="logo-img" loading="lazy" />
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+<style>
+.marquee-wrapper {
+  overflow: hidden;
+  height: 150px;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+
+.logo-container {
+  flex: 0 0 auto; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+</style>
